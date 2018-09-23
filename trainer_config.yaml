@@ -22,7 +22,7 @@ default:
     buffer_size: 10240
 
 RealFakeBrain:
-    trainer: DQN           # trainer type
+    trainer: DDPG           # trainer type
     batch_size: 512         # batch size
     memory_size: 10240       # allocated memory size
     beta: 5.0e-3
@@ -44,9 +44,9 @@ RealFakeBrain:
     summary_freq: 1000      # Frequency at which at summary will be printed out
 
 MCD:
-    trainer: DQN            # trainer type
-    batch_size: 512         # batch size
-    memory_size: 5120       # allocated memory size
+    trainer: DDPG           # trainer type
+    batch_size: 1048        # batch size
+    memory_size: 104800     # allocated memory size
     beta: 5.0e-3
     epsilon: 0.2            # exploration rate
     epsilon_min: 0.01       # minimal exploration rate

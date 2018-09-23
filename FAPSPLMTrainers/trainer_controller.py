@@ -8,7 +8,7 @@ import re
 import tensorflow as tf
 import keras
 import yaml
-import keras.backend as backend
+import keras.backend as B
 
 from FAPSPLMAgents import FAPSPLMEnvironment, FAPSPLMEnvironmentException
 
@@ -45,7 +45,7 @@ class TrainerController(object):
         self.seed = seed
         np.random.seed(self.seed)
 
-        if backend.backend() == 'tensorflow':
+        if B.backend() == 'tensorflow':
             tf.set_random_seed(self.seed)
         else:
             np.random.seed(seed)
@@ -138,7 +138,7 @@ class TrainerController(object):
 
         # configure tensor flow to use 8 cores
         if self.use_gpu:
-            if backend.backend() == 'tensorflow':
+            if B.backend() == 'tensorflow':
                 config = tf.ConfigProto(device_count={"GPU": 1},
                                         intra_op_parallelism_threads=8,
                                         inter_op_parallelism_threads=8,
@@ -147,7 +147,7 @@ class TrainerController(object):
             else:
                 raise FAPSPLMEnvironmentException("Other backend environment than Tensorflow are nor supported. ")
         else:
-            if backend.backend() == 'tensorflow':
+            if B.backend() == 'tensorflow':
                 config = tf.ConfigProto(device_count={"CPU": 8},
                                         intra_op_parallelism_threads=8,
                                         inter_op_parallelism_threads=8,
@@ -167,7 +167,7 @@ class TrainerController(object):
         print("\n##################################################################################################")
         print("Starting Training...")
         print("Brain Name: {}".format(self.brain_name))
-        print("Backend : {}".format(backend.backend()))
+        print("Backend : {}".format(B.backend()))
         print("Use cpu: {}".format(self.use_gpu))
         iterator = 0
         for k, t in self.trainers.items():
