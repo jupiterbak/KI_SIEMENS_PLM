@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+enum ActionTypeProto {
+    action_discrete = 0;
+    action_continuous = 1;
+}

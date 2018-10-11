@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "action_type_proto.proto";
+import "space_type_proto.proto";
+
+message BrainParametersProto {
+
+    int32				stateSize               = 1;
+	int32				actionSize              = 2;
+	int32				observationSize         = 3;
+	int32				memorySize              = 4;
+	int32				cameraResolutions_H     = 5;
+	int32				cameraResolutions_W     = 6;
+    repeated string     actionDescriptions      = 7;
+    repeated string     stateSpaceDescriptions  = 8;
+	ActionTypeProto		actionSpaceType         = 9;
+	SpaceTypeProto		stateSpaceType          = 10;
+	string				brainName               = 11;
+}

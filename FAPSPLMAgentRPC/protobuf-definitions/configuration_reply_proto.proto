@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+
+enum ConfigTypeProto {
+    OK = 0;
+    ERR = 1;
+}
+
+message HelloReply {
+  ConfigTypeProto message = 1;
+}

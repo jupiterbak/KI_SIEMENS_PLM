@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+
+message HandleTypeProto {
+    int32 handle    = 1;
+}

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+import "academy_configuration_proto.proto";
+import "academy_state_proto.proto";
+import "academy_action_proto.proto";
+import "handle_type_proto.proto";
+
+package communicator_objects;
+
+// The greeting service definition.
+service FAPSPLMServices {
+    rpc FAPSAGENT_Initialize(AcademyConfigProto) returns (HandleTypeProto);
+	rpc FAPSAGENT_Clear(HandleTypeProto) returns (HandleTypeProto);
+	rpc FAPSAGENT_Start(HandleTypeProto)returns (HandleTypeProto);
+	rpc FAPSAGENT_Stop(HandleTypeProto)returns (HandleTypeProto);
+	rpc FAPSAGENT_getAction(AcademyStateProto) returns (AcademyActionProto);
+}

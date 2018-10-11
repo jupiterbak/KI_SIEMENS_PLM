@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "brain_state_proto.proto";
+import "handle_type_proto.proto";
+
+
+message AcademyStateProto {
+	HandleTypeProto					handle					= 4;
+    string				            academyName             = 1;
+	int32					        brainCount 				= 2;
+	repeated BrainStateProto		states					= 3;
+}

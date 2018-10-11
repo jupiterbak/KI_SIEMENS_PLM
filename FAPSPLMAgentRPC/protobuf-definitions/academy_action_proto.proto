@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "brain_action_proto.proto";
+import "handle_type_proto.proto";
+
+message AcademyActionProto {
+    string				            AcademyName             = 1;
+	int32					        brainCount 				= 2;
+	repeated BrainActionProto		actions					= 3;
+	HandleTypeProto					handle					= 4;
+}

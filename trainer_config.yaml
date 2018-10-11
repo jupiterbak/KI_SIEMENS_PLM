@@ -45,8 +45,8 @@ RealFakeBrain:
 
 MCD:
     trainer: DDPG           # trainer type
-    batch_size: 1048        # batch size
-    memory_size: 104800     # allocated memory size
+    batch_size: 512        # batch size
+    memory_size: 10240     # allocated memory size
     beta: 5.0e-3
     epsilon: 0.2            # exploration rate
     epsilon_min: 0.01       # minimal exploration rate

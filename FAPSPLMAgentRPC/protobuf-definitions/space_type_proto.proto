@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+enum SpaceTypeProto {
+    space_discrete = 0;
+    space_continuous = 1;
+}

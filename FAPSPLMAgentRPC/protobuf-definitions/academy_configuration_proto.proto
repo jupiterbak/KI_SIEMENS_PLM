@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+import "brain_parameter_proto.proto";
+
+
+message AcademyConfigProto {
+    string				            AcademyName             = 1;
+	int32				            brainCount              = 2;
+	int32				            resetParameterSize      = 3;
+	repeated float   	            resetParameters         = 4;
+    repeated BrainParametersProto   BrainParameter  = 6;
+}
