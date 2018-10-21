@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x17\x62rain_state_proto.proto\"\xa5\x01\n\x0f\x42rainStateProto\x12\x11\n\tbrainName\x18\x01 \x01(\t\x12\x0e\n\x06states\x18\x02 \x03(\x02\x12\x0f\n\x07rewards\x18\x03 \x03(\x02\x12\x1e\n\x16last_actions_continous\x18\x04 \x03(\x02\x12\x1d\n\x15last_actions_discrete\x18\x05 \x03(\x05\x12\x10\n\x08memories\x18\x06 \x03(\x05\x12\r\n\x05\x64ones\x18\x07 \x03(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x17\x62rain_state_proto.proto\"\xb8\x01\n\x0f\x42rainStateProto\x12\x11\n\tbrainName\x18\x01 \x01(\t\x12\x13\n\x0blast_states\x18\x02 \x03(\x02\x12\x1e\n\x16last_actions_continous\x18\x03 \x03(\x02\x12\x1d\n\x15last_actions_discrete\x18\x04 \x03(\x05\x12\x0e\n\x06states\x18\x05 \x03(\x02\x12\x0e\n\x06reward\x18\x06 \x01(\x02\x12\x10\n\x08memories\x18\x07 \x03(\x05\x12\x0c\n\x04\x64one\x18\x08 \x01(\x05\x62\x06proto3')
 )
 
 
@@ -40,44 +40,51 @@ _BRAINSTATEPROTO = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='states', full_name='BrainStateProto.states', index=1,
+      name='last_states', full_name='BrainStateProto.last_states', index=1,
       number=2, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rewards', full_name='BrainStateProto.rewards', index=2,
+      name='last_actions_continous', full_name='BrainStateProto.last_actions_continous', index=2,
       number=3, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='last_actions_continous', full_name='BrainStateProto.last_actions_continous', index=3,
-      number=4, type=2, cpp_type=6, label=3,
+      name='last_actions_discrete', full_name='BrainStateProto.last_actions_discrete', index=3,
+      number=4, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='last_actions_discrete', full_name='BrainStateProto.last_actions_discrete', index=4,
-      number=5, type=5, cpp_type=1, label=3,
+      name='states', full_name='BrainStateProto.states', index=4,
+      number=5, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='memories', full_name='BrainStateProto.memories', index=5,
-      number=6, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
+      name='reward', full_name='BrainStateProto.reward', index=5,
+      number=6, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dones', full_name='BrainStateProto.dones', index=6,
+      name='memories', full_name='BrainStateProto.memories', index=6,
       number=7, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='done', full_name='BrainStateProto.done', index=7,
+      number=8, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -94,7 +101,7 @@ _BRAINSTATEPROTO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=28,
-  serialized_end=193,
+  serialized_end=212,
 )
 
 DESCRIPTOR.message_types_by_name['BrainStateProto'] = _BRAINSTATEPROTO

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x18\x62rain_action_proto.proto\"\x80\x01\n\x10\x42rainActionProto\x12\x11\n\tbrainName\x18\x01 \x01(\t\x12\x19\n\x11\x61\x63tions_continous\x18\x02 \x03(\x02\x12\x18\n\x10\x61\x63tions_discrete\x18\x03 \x03(\x02\x12\x14\n\x0creset_needed\x18\x04 \x03(\x05\x12\x0e\n\x06isDone\x18\x05 \x03(\x05\x62\x06proto3')
+  serialized_pb=_b('\n\x18\x62rain_action_proto.proto\"\x80\x01\n\x10\x42rainActionProto\x12\x11\n\tbrainName\x18\x01 \x01(\t\x12\x19\n\x11\x61\x63tions_continous\x18\x02 \x03(\x02\x12\x18\n\x10\x61\x63tions_discrete\x18\x03 \x03(\x05\x12\x14\n\x0creset_needed\x18\x04 \x01(\x05\x12\x0e\n\x06isDone\x18\x05 \x01(\x05\x62\x06proto3')
 )
 
 
@@ -48,22 +48,22 @@ _BRAINACTIONPROTO = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='actions_discrete', full_name='BrainActionProto.actions_discrete', index=2,
-      number=3, type=2, cpp_type=6, label=3,
+      number=3, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='reset_needed', full_name='BrainActionProto.reset_needed', index=3,
-      number=4, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
+      number=4, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='isDone', full_name='BrainActionProto.isDone', index=4,
-      number=5, type=5, cpp_type=1, label=3,
-      has_default_value=False, default_value=[],
+      number=5, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),

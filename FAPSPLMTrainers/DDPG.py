@@ -13,7 +13,7 @@ from keras.layers import Dense, add
 from keras.models import Sequential, Model
 from keras.optimizers import Adam, Optimizer
 
-from FAPSPLMAgents import FAPSPLMEnvironmentException
+from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 from FAPSPLMTrainers.utils.random import OrnsteinUhlenbeckProcess
 
 logger = logging.getLogger("FAPSPLMAgents")

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message BrainStateProto {
+
+    string				            brainName           = 1;
+	repeated float				    last_states         = 2;
+	repeated float					last_actions_continous        = 3;
+	repeated int32					last_actions_discrete        = 4;
+    repeated float				    states             	= 5;
+    float							reward             = 6;
+	repeated int32					memories            = 7;
+	int32					done             	= 8;
+}

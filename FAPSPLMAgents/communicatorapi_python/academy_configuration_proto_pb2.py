@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from FAPSPLMAgentRPC.communicatorapi_python import brain_parameter_proto_pb2 as brain__parameter__proto__pb2
+import FAPSPLMAgents.communicatorapi_python.brain_parameter_proto_pb2 as brain__parameter__proto__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

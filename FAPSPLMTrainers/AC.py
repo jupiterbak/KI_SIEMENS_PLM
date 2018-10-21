@@ -10,7 +10,7 @@ from keras.optimizers import Adam
 import keras.backend as K
 from collections import deque
 
-from FAPSPLMAgents import FAPSPLMEnvironmentException, BrainInfo
+from FAPSPLMAgents.exception import FAPSPLMEnvironmentException, BrainInfo
 
 logger = logging.getLogger("FAPSPLMAgents")
 

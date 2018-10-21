@@ -12,8 +12,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from FAPSPLMAgentRPC.communicatorapi_python import action_type_proto_pb2 as action__type__proto__pb2
-from FAPSPLMAgentRPC.communicatorapi_python import space_type_proto_pb2 as space__type__proto__pb2
+import FAPSPLMAgents.communicatorapi_python.action_type_proto_pb2 as action__type__proto__pb2
+import FAPSPLMAgents.communicatorapi_python.space_type_proto_pb2 as space__type__proto__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

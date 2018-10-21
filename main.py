@@ -6,7 +6,7 @@ import logging
 import os
 import docopt
 
-from FAPSPLMTrainers.trainer_controller import TrainerController
+from FAPSPLMAgents.trainer_controller import TrainerController
 
 if __name__ == '__main__':
     logger = logging.getLogger("FAPSPLMAgents")
@@ -58,7 +58,6 @@ if __name__ == '__main__':
     base_path = os.path.dirname(__file__)
     TRAINER_CONFIG_PATH = os.path.abspath(os.path.join(base_path, "trainer_config.yaml"))
 
-    tc = TrainerController(use_gpu, run_id, save_freq, load_model, train_model,
-                           worker_id, keep_checkpoints, lesson, seed, TRAINER_CONFIG_PATH)
-    tc.start_learning()
+    TrainerController.serve(use_gpu, run_id, save_freq, load_model, train_model, worker_id, keep_checkpoints, lesson,
+                            seed, TRAINER_CONFIG_PATH)
     exit(0)

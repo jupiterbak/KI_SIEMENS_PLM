@@ -33,6 +33,8 @@ class Trainer(object):
         self.seed = seed
         self.steps = 0
         self.last_reward = 0
+        self.initialized = False
+        self.global_done = False
 
     def __str__(self):
         return '''Empty Trainer'''
@@ -73,6 +75,12 @@ class Trainer(object):
         Initialize the trainer
         """
         raise FAPSTrainerException("The initialize method was not implemented.")
+
+    def is_initialized(self):
+        """
+        check if the trainer is initialized
+        """
+        return  self.initialized
 
     def clear(self):
         """

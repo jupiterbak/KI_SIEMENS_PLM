@@ -10,7 +10,7 @@ from keras.layers import Dense
 from keras.optimizers import Adam
 from keras import backend as k
 
-from FAPSPLMAgents import FAPSPLMEnvironmentException
+from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 
 logger = logging.getLogger("FAPSPLMAgents")
 

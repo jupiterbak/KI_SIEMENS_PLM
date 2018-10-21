@@ -11,7 +11,7 @@ from keras.layers import Dense
 from keras.models import Sequential
 from keras.optimizers import Adam
 
-from FAPSPLMAgents import FAPSPLMEnvironmentException
+from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 
 logger = logging.getLogger("FAPSPLMAgents")
 

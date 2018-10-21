@@ -4,7 +4,7 @@ message BrainActionProto {
 
     string				            brainName           = 1;
 	repeated float					actions_continous   = 2;
-    repeated float					actions_discrete    = 3;
-	repeated int32					reset_needed        = 4;
-    repeated int32					isDone        = 5;
+    repeated int32					actions_discrete    = 3;
+	int32					        reset_needed        = 4;
+    int32					        isDone        = 5;
 }

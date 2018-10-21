@@ -2,28 +2,73 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01a89cca-533c-4f01-ae84-e6ee9b084c68" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/brain.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/environment.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/exception.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/make_protobuf.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/FAPSPLMServives.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_action_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_configuration_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_state_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/action_type_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_action_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_parameter_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_state_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/configuration_reply_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/handle_type_proto.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/space_type_proto.proto" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/KI_SIEMENS_PLM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/KI_SIEMENS_PLM.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FAPSPLMAgents/BrainInfo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/MCD/DPPG_actor_model.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/MCD/DPPG_actor_target_model.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/MCD/DPPG_critic_model.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/MCD/DPPG_critic_target_model.h5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer_config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/trainer_config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/brain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/FAPSPLMServives.grpc.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/FAPSPLMServives.grpc.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/FAPSPLMServives.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/FAPSPLMServives.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_action_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_action_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_configuration_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_configuration_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_state_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_state_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/action_type_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/action_type_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/brain_action_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/brain_action_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/brain_parameter_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/brain_parameter_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/brain_state_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/brain_state_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/configuration_reply_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/configuration_reply_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/handle_type_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/handle_type_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/space_type_proto.pb.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/space_type_proto.pb.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/FAPSPLMServives_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/FAPSPLMServives_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/FAPSPLMServives_pb2_grpc.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/FAPSPLMServives_pb2_grpc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_action_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_action_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_configuration_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_configuration_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_state_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_state_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/action_type_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/action_type_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/brain_action_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_action_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/brain_parameter_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_parameter_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/brain_state_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_state_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/configuration_reply_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/configuration_reply_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/handle_type_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/handle_type_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/space_type_proto_pb2.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/space_type_proto_pb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/environment.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/trainer_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/exception.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/make_protobuf.bat" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/make_protobuf.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/FAPSPLMServives.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/FAPSPLMServives.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_action_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/academy_action_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_configuration_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/academy_configuration_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_state_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/academy_state_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/action_type_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/action_type_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_action_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_action_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_parameter_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_parameter_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_state_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_state_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/configuration_reply_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/configuration_reply_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/handle_type_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/handle_type_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/space_type_proto.proto" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/space_type_proto.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgents/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgents/brain.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMAgents/environment.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/A2C.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/A2C.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/AC.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/AC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/PPO.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/PPO.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/trainer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/trainer_controller.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,49 +80,59 @@
     <session id="-700110642">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.36" value="1" />
+          <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="4" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.63" value="1" />
           <entry key="project.open.time.92" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="bat" value="6" />
-          <entry key="cc" value="2" />
-          <entry key="h" value="4" />
+          <entry key="bat" value="10" />
+          <entry key="cc" value="3" />
+          <entry key="cs" value="6" />
+          <entry key="h" value="6" />
           <entry key="md" value="1" />
-          <entry key="proto" value="120" />
-          <entry key="py" value="99" />
-          <entry key="txt" value="1" />
+          <entry key="proto" value="151" />
+          <entry key="py" value="214" />
+          <entry key="txt" value="3" />
+          <entry key="yaml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Bat" value="5" />
-          <entry key="C++" value="6" />
+          <entry key="Bat" value="9" />
+          <entry key="C#" value="2" />
+          <entry key="C++" value="9" />
+          <entry key="CSFile" value="4" />
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="PROTO" value="119" />
-          <entry key="Python" value="99" />
+          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PROTO" value="150" />
+          <entry key="Python" value="214" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="16" />
-          <entry key="bat" value="1074" />
-          <entry key="proto" value="1267" />
-          <entry key="py" value="456" />
+          <entry key="bat" value="1126" />
+          <entry key="dummy" value="59" />
+          <entry key="proto" value="1305" />
+          <entry key="py" value="4332" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Bat" value="1074" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="PROTO" value="1267" />
-          <entry key="Python" value="472" />
+          <entry key="Bat" value="1126" />
+          <entry key="PLAIN_TEXT" value="62" />
+          <entry key="PROTO" value="1305" />
+          <entry key="Python" value="4348" />
         </counts>
       </usages-collector>
     </session>
@@ -85,63 +140,51 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/make_protobuf.bat">
+        <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/trainer_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="38" />
+            <state relative-caret-position="168">
+              <caret line="118" selection-start-line="118" selection-end-line="118" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1540136156978" expanded="true" signature="13894:17270" ph="..." />
+                <marker date="1540136156978" expanded="true" signature="17332:17661" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/brain.py">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://C:/ProgramData/Anaconda3/envs/tensorflow-gpu/Lib/site-packages/grpc/_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="390" selection-start-line="390" selection-end-line="390" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/environment.py">
+        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1352">
-              <caret line="172" column="32" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <marker date="1539194689079" expanded="true" signature="3189:7344" ph="..." />
-                <marker date="1539194689079" expanded="true" signature="7393:7402" ph="..." />
-                <marker date="1539194689079" expanded="true" signature="8183:8192" ph="..." />
-                <marker date="1539194689079" expanded="true" signature="8484:8493" ph="..." />
-                <marker date="1539194689079" expanded="true" signature="8784:8793" ph="..." />
-                <marker date="1539194689079" expanded="true" signature="9089:9098" ph="..." />
-              </folding>
+            <state relative-caret-position="204">
+              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DQN.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/A2C.py">
+        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/PPO.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="47" column="22" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_configuration_proto_pb2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="37" column="23" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/trainer_controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="58" selection-start-line="58" selection-end-line="75" selection-end-column="37" />
-              <folding>
-                <element signature="e#52#66#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="101">
+              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -160,8 +203,15 @@
       <find>backend</find>
       <find>save</find>
       <find>FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/</find>
-      <find>model_path</find>
       <find>PYTHON_PACKAGE</find>
+      <find>self.brain</find>
+      <find>env_brain</find>
+      <find>self.env_brain</find>
+      <find>trainer_config</find>
+      <find>actionSpaceType</find>
+      <find>train_model</find>
+      <find>model_path</find>
+      <find>_create_model_path</find>
     </findStrings>
     <replaceStrings>
       <replace>protobuf-definitions/communicator_objects/</replace>
@@ -173,33 +223,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/protobuf-definitions/space_type_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/action_type_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/brain_parameter_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/academy_configuration_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/FAPSPLMServives.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/configuration_repy_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/brain_action_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/make.bat" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/brain_parameter_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/space_type_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/action_type_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/handle_type_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/academy_state_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/FAPSPLMServives.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/academy_action_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/brain_state_proto.proto" />
-        <option value="$PROJECT_DIR$/protobuf-definitions/communicator_objects/academy_configuration_proto.proto" />
-        <option value="$PROJECT_DIR$/make_protobuf.bat" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorAPI_PYTHON/communicator_objects/__init__.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorAPI_PYTHON/__init__.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorAPI_PYTHON/FAPSPLMServives_pb2_grpc.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorAPI_PYTHON/communicator_objects/academy_action_proto_pb2.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/space_type_proto.proto" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/handle_type_proto.proto" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/configuration_reply_proto.proto" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/brain_state_proto.proto" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/brain_action_proto.proto" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/action_type_proto.proto" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/academy_action_proto.proto" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/communicator_objects/academy_configuration_proto.proto" />
@@ -224,6 +247,33 @@
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/FAPSPLMServives_pb2.py" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/FAPSPLMServives_pb2_grpc.py" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/environment.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/environment.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/environementRPC.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/brain.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/environmentRPC.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/trainer_controller_RPC.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgent/trainer_controller_RPC.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgent/trainer_controller.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/trainer.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/__init__.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/BrainInfo.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/make_protobuf.bat" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_action_proto.proto" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_state_proto.proto" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_action_proto_pb2.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_configuration_proto_pb2.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_state_proto_pb2.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_parameter_proto_pb2.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/FAPSPLMServives_pb2.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/FAPSPLMServives_pb2_grpc.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/trainer_controller.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/A2C.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/AC.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/PPO.py" />
       </list>
     </option>
   </component>
@@ -231,6 +281,23 @@
     <option name="y" value="611" />
     <option name="width" value="1920" />
     <option name="height" value="429" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyPep8Inspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -243,17 +310,6 @@
             <path>
               <item name="KI_SIEMENS_PLM" type="b2602c69:ProjectViewProjectNode" />
               <item name="KI_SIEMENS_PLM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KI_SIEMENS_PLM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KI_SIEMENS_PLM" type="462c0819:PsiDirectoryNode" />
-              <item name="FAPSPLMAgentRPC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KI_SIEMENS_PLM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KI_SIEMENS_PLM" type="462c0819:PsiDirectoryNode" />
-              <item name="FAPSPLMAgentRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="communicatorapi_python" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="KI_SIEMENS_PLM" type="b2602c69:ProjectViewProjectNode" />
@@ -273,23 +329,23 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/FAPSPLMAgents" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgents" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\protobuf-definitions" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python\communicator_objects" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\protobuf-definitions\communicator_objects" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\protobuf-definitions" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentsRPC" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\protobuf-definitions" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python\communicator_objects" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -364,21 +420,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24868283" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.28058362" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4017258" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32922733" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.2936078" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.2924257" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.28092042" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.28060672" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -391,125 +448,48 @@
     <MESSAGE value="Update Environement" />
     <option name="LAST_COMMIT_MESSAGE" value="Update Environement" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/FAPSPLMAgents/trainer_controller.py</url>
+          <line>119</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/communicator_objects/brain_action_proto_pb2.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/brain.py" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/environementRPC.py" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/brain.py" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/environmentRPC.py" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/environment.py" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/Random.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1113" />
+        <state relative-caret-position="-2040" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="915">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#52#66#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="578">
+          <caret line="36" column="32" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/communicator_objects/academy_configuration_proto_pb2.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/BrainInfo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        <state relative-caret-position="204">
+          <caret line="12" column="33" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/communicator_objects/academy_action_proto_pb2.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/academy_action_proto.proto">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="136">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="43" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/communicator_objects/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_action_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_configuration_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_state_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/action_type_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_action_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_parameter_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_state_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/configuration_reply_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/FAPSPLMServives.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/handle_type_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/space_type_proto.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_cpp/academy_configuration_proto.pb.cc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -518,196 +498,232 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/__init__.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_cpp/FAPSPLMServives.pb.cc" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_cpp/FAPSPLMServives.pb.h" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_csharp/space_type_proto.pb.h" />
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_csharp/FAPSPLMServives.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
+        <state relative-caret-position="-309" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" lean-forward="true" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/FAPSPLMServives_pb2_grpc.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/FAPSPLMServives_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/brain_action_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1113" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/space_type_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/academy_action_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/handle_type_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/brain_state_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/rpc_communicator/brain_parameter_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/brain.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/make_protobuf.bat">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/environment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_action_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_state_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/action_type_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/brain_action_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/brain_parameter_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/configuration_reply_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/FAPSPLMServives_pb2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/handle_type_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/space_type_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/FAPSPLMServives_pb2_grpc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/brain_state_proto_pb2.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/trainer_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="58" selection-start-line="58" selection-end-line="75" selection-end-column="37" />
+        <state relative-caret-position="527">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
           <folding>
             <element signature="e#52#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/communicatorapi_python/academy_configuration_proto_pb2.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_csharp/FAPSPLMServivesGrpc.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainer_config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="37" column="23" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="23" />
+        <state relative-caret-position="65">
+          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/trainer.py">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="26" />
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgentRPC/environment.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/make_protobuf.bat">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1352">
-          <caret line="172" column="32" selection-start-line="172" selection-start-column="13" selection-end-line="172" selection-end-column="32" />
+        <state relative-caret-position="187">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/academy_configuration_proto.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/action_type_proto.proto">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/space_type_proto.proto">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_parameter_proto.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_action_proto.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/brain_state_proto.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/FAPSPLMServives.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="74" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/academy_state_proto.proto">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_csharp/AcademyConfigurationProto.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_csharp/AcademyActionProto.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1649">
+          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_action_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_configuration_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/academy_state_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/action_type_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_action_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_parameter_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="44" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/brain_state_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/configuration_reply_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/FAPSPLMServives_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/FAPSPLMServives_pb2_grpc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/handle_type_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="15" selection-start-line="60" selection-end-line="60" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_python/space_type_proto_pb2.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/trainer_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1539194689079" expanded="true" signature="3189:7344" ph="..." />
-            <marker date="1539194689079" expanded="true" signature="7393:7402" ph="..." />
-            <marker date="1539194689079" expanded="true" signature="8183:8192" ph="..." />
-            <marker date="1539194689079" expanded="true" signature="8484:8493" ph="..." />
-            <marker date="1539194689079" expanded="true" signature="8784:8793" ph="..." />
-            <marker date="1539194689079" expanded="true" signature="9089:9098" ph="..." />
+            <marker date="1540136156978" expanded="true" signature="13894:17270" ph="..." />
+            <marker date="1540136156978" expanded="true" signature="17332:17661" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/exception.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/A2C.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="22" />
+        <state relative-caret-position="220">
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/AC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda3/envs/tensorflow-gpu/Lib/site-packages/grpc/_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="390" selection-start-line="390" selection-end-line="390" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DQN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/PPO.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
         </state>
       </provider>
     </entry>
