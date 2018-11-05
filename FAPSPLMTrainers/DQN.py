@@ -11,6 +11,7 @@ from keras.optimizers import Adam
 from keras import backend as k
 
 from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
+import FAPSPLMAgents.communicatorapi_python.action_type_proto_pb2 as action__type__proto__pb2
 
 logger = logging.getLogger("FAPSPLMAgents")
 
@@ -38,19 +39,21 @@ class DQN:
 
         # initialize global trainer parameters
         self.brain_name = brain_name
-        self.env_brain = env.brains[self.brain_name]
+        self.env_brain = env
         self.trainer_parameters = trainer_parameters
         self.is_training = training
         self.seed = seed
         self.steps = 0
         self.last_reward = 0
+        self.initialized = False
 
         # initialize specific DQN parameters
-        self.state_size = self.env_brain.state_space_size
-        self.action_size = self.env_brain.action_space_size
-        self.action_space_type = self.env_brain.action_space_type
-        if self.action_space_type == "continuous":
-            logger.warning("Using DQN with continuous action space. Please check your environement definition")
+        self.env_brain = env
+        self.state_size = env.stateSize
+        self.action_size = env.actionSize
+        self.action_space_type = env.actionSpaceType
+        if self.action_space_type == action__type__proto__pb2.action_discrete:
+            logger.warning("Using DQN with continuous action space. Please check your environment definition")
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']
         self.hidden_units = self.trainer_parameters['hidden_units']
@@ -99,11 +102,17 @@ class DQN:
     def _build_model(self):
         # Neural Net for Deep-Q learning Model
         model = Sequential()
-        model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu'))
+        model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu', name="DQN_input"))
         for x in range(1, self.num_layers):
             model.add(Dense(self.hidden_units, activation='relu'))
         model.add(Dense(self.action_size, activation='linear'))
         return model
+
+    def is_initialized(self):
+        """
+        check if the trainer is initialized
+        """
+        return self.initialized
 
     def initialize(self):
         """
@@ -112,6 +121,8 @@ class DQN:
         self.model = self._build_model()
         self.model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate))
         print(self.model.summary())
+
+        self.initialized = True
 
     def clear(self):
         """
@@ -160,6 +171,7 @@ class DQN:
             return np.random.randint(0, 1, self.action_size)
             # return random.randrange(self.action_size)
         else:
+            self.model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate))
             act_values = self.model.predict(brain_info.states)
             # action_cookie = np.argmax(act_values[0])
             index = np.argmax(act_values[0])

@@ -6,7 +6,7 @@ import logging
 import os
 import docopt
 
-from FAPSPLMAgents.trainer_controller import TrainerController
+from FAPSPLMAgents.TrainerController import TrainerController
 
 if __name__ == '__main__':
     logger = logging.getLogger("FAPSPLMAgents")

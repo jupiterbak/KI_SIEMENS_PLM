@@ -27,7 +27,11 @@ class Trainer(object):
         :param seed: Random seed.
         """
         self.brain_name = brain_name
-        self.brain = env.brains[self.brain_name]
+        self.brain = env
+        self.env_brain = env
+        self.state_size = env.stateSize
+        self.action_size = env.actionSize
+        self.action_space_type = env.actionSpaceType
         self.trainer_parameters = trainer_parameters
         self.is_training = training
         self.seed = seed
@@ -80,7 +84,7 @@ class Trainer(object):
         """
         check if the trainer is initialized
         """
-        return  self.initialized
+        return self.initialized
 
     def clear(self):
         """

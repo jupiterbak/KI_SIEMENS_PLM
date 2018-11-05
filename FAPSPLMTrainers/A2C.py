@@ -37,18 +37,19 @@ class A2C(object):
         :param seed: Random seed.
         """
         self.brain_name = brain_name
-        self.brain = env.brains[self.brain_name]
+        self.brain = env
         self.trainer_parameters = trainer_parameters
         self.is_training = training
         self.seed = seed
         self.steps = 0
         self.last_reward = 0
+        self.initialized = False
 
         # initialize specific PPO parameters
-        self.env_brain = env.brains[self.brain_name]
-        self.state_size = self.env_brain.state_space_size
-        self.action_size = self.env_brain.action_space_size
-        self.action_space_type = self.env_brain.action_space_type
+        self.env_brain = env
+        self.state_size = env.stateSize
+        self.action_size = env.actionSize
+        self.action_space_type = env.actionSpaceType
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']
         self.hidden_units = self.trainer_parameters['hidden_units']
@@ -95,6 +96,12 @@ class A2C(object):
         """
         return self.last_reward
 
+    def is_initialized(self):
+        """
+        check if the trainer is initialized
+        """
+        return self.initialized
+
     def _create_actor_model(self):
         model = Sequential()
         model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu',
@@ -128,6 +135,7 @@ class A2C(object):
         self.critic_model.compile(loss="mse", optimizer=Adam(lr=self.learning_rate))
         print('\n##### Critic Model ')
         print(self.critic_model.summary())
+        self.initialized = True
 
     def clear(self):
         """

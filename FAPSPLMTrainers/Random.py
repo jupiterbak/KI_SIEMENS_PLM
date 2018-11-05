@@ -4,7 +4,7 @@ import logging
 import numpy as np
 from collections import deque
 
-from FAPSPLMAgents.exception import FAPSPLMEnvironmentException, BrainInfo
+from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 
 logger = logging.getLogger("FAPSPLMAgents")
 
@@ -30,18 +30,19 @@ class Random(object):
         :param seed: Random seed.
         """
         self.brain_name = brain_name
-        self.brain = env.brains[self.brain_name]
+        self.brain = env
         self.trainer_parameters = trainer_parameters
         self.is_training = training
         self.seed = seed
         self.steps = 0
         self.last_reward = 0
+        self.initialized = False
 
         # initialize specific DQN parameters
-        self.env_brain = env.brains[self.brain_name]
-        self.state_size = self.env_brain.state_space_size
-        self.action_size = self.env_brain.action_space_size
-        self.action_space_type = self.env_brain.action_space_type
+        self.env_brain = env
+        self.state_size = env.stateSize
+        self.action_size = env.actionSize
+        self.action_space_type = env.actionSpaceType
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']
         self.hidden_units = self.trainer_parameters['hidden_units']
@@ -87,11 +88,18 @@ class Random(object):
         """
         return self.last_reward
 
+    def is_initialized(self):
+        """
+        check if the trainer is initialized
+        """
+        return self.initialized
+
     def initialize(self):
         """
         Initialize the trainer
         """
         # Nothing to be done.
+        self.initialized = True
 
     def clear(self):
         """
@@ -160,7 +168,7 @@ class Random(object):
         Returns whether or not the trainer has enough elements to run update model
         :return: A boolean corresponding to wether or not update_model() can be run
         """
-        return (len(self.replay_memory) >= self.batch_size) and (len(self.replay_memory) % self.batch_size == 0)
+        return (len(self.replay_memory) >= self.batch_size) and (self.get_step % self.batch_size == 0)
 
     def update_model(self):
         """
@@ -179,6 +187,7 @@ class Random(object):
         """
         Saves training statistics to i.e. Tensorboard.
         """
+        print("Dummy Summary - Step {}".format(self.get_step))
         # Nothing to be done.
 
     def write_tensorboard_text(self, key, input_dict):

@@ -11,6 +11,7 @@ from keras.optimizers import Adam
 from keras import backend as k
 
 from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
+import FAPSPLMAgents.communicatorapi_python.action_type_proto_pb2 as action__type__proto__pb2
 
 logger = logging.getLogger("FAPSPLMAgents")
 
@@ -38,19 +39,21 @@ class DDQN:
 
         # initialize global trainer parameters
         self.brain_name = brain_name
-        self.env_brain = env.brains[self.brain_name]
+        self.env_brain = env
         self.trainer_parameters = trainer_parameters
         self.is_training = training
         self.seed = seed
         self.steps = 0
         self.last_reward = 0
+        self.initialized = False
 
         # initialize specific DQN parameters
-        self.state_size = self.env_brain.state_space_size
-        self.action_size = self.env_brain.action_space_size
-        self.action_space_type = self.env_brain.action_space_type
-        if self.action_space_type == "continuous":
-            logger.warning("Using DDQN with continuous action space. Please check your environement definition")
+        self.env_brain = env
+        self.state_size = env.stateSize
+        self.action_size = env.actionSize
+        self.action_space_type = env.actionSpaceType
+        if self.action_space_type == action__type__proto__pb2.action_discrete:
+            logger.warning("Using DDQN with continuous action space. Please check your environment definition")
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']
         self.hidden_units = self.trainer_parameters['hidden_units']
@@ -110,6 +113,12 @@ class DDQN:
         # copy weights from model to target_model
         self.target_model.set_weights(self.model.get_weights())
 
+    def is_initialized(self):
+        """
+        check if the trainer is initialized
+        """
+        return self.initialized
+
     def initialize(self):
         """
         Initialize the trainer
@@ -125,6 +134,7 @@ class DDQN:
         print(self.target_model.summary())
 
         self._update_target_model()
+        self.initialized = True
 
     def clear(self):
         """
