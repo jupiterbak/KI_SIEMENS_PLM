@@ -5,8 +5,8 @@ import logging
 import numpy as np
 from collections import deque
 
-from keras.models import Model
-from keras.layers import Input, Dense
+from keras.models import Sequential
+from keras.layers import Dense
 from keras.optimizers import Adam
 from keras import backend as k
 
@@ -101,13 +101,12 @@ class DQN:
 
     def _build_model(self):
         # Neural Net for Deep-Q learning Model
-        inputs = Input(shape=(self.state_size,))
-        layer = Dense(self.hidden_units, input_dim=self.state_size, activation='relu', name="DQN_input")(inputs)
-
+        model = Sequential()
+        model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu'))
         for x in range(1, self.num_layers):
-            layer = Dense(self.hidden_units, activation='relu')(layer)
-            layer = Dense(self.action_size, activation='linear')(layer)
-        return Model(inputs=inputs, outputs=layer)
+            model.add(Dense(self.hidden_units, activation='relu'))
+        model.add(Dense(self.action_size, activation='linear'))
+        return model
 
     def is_initialized(self):
         """
@@ -172,7 +171,6 @@ class DQN:
             return np.random.randint(0, 1, self.action_size)
             # return random.randrange(self.action_size)
         else:
-            self.model.compile(loss='mse', optimizer=Adam(lr=self.learning_rate))
             act_values = self.model.predict(brain_info.states)
             # action_cookie = np.argmax(act_values[0])
             index = np.argmax(act_values[0])
@@ -188,7 +186,7 @@ class DQN:
         :param next_info: Next AllBrainInfo.
         """
         self.replay_memory.append(
-            (curr_info.states, action_vector, next_info.rewards, next_info.states, next_info.local_done))
+            (curr_info.states, action_vector, [next_info.rewards], next_info.states, [next_info.local_done]))
 
     def process_experiences(self, current_info, action_vector, next_info):
         """

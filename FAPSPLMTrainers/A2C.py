@@ -199,7 +199,7 @@ class A2C(object):
         :param next_info: Next AllBrainInfo.
         """
         self.replay_memory.append(
-            (curr_info.states, action_vector, next_info.rewards, next_info.states, next_info.local_done))
+            (curr_info.states, action_vector, [next_info.rewards], next_info.states, [next_info.local_done]))
 
     def process_experiences(self, current_info, action_vector, next_info):
         """

@@ -18,6 +18,7 @@ from FAPSPLMAgents.communicatorapi_python import academy_action_proto_pb2 as aca
 from FAPSPLMAgents.communicatorapi_python import academy_configuration_proto_pb2 as academy_configuration_proto_pb2
 from FAPSPLMAgents.communicatorapi_python import academy_state_proto_pb2 as academy_state_proto_pb2
 from FAPSPLMAgents.communicatorapi_python import handle_type_proto_pb2 as handle_type_proto_pb2
+from FAPSPLMAgents.communicatorapi_python import action_type_proto_pb2 as action_type_proto_pb2
 from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 
 _ONE_DAY_IN_SECONDS = 60 * 60 * 24
@@ -182,7 +183,16 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
 
         # Start the trainer  wrapper
         for k, t in trainers.items():
-            t.start()
+            if not t.is_initialized():
+                t.initialize()
+                # Instantiate model parameters from previously saved models
+                if self.load_model:
+                    print("\nINFO: Loading models ...")
+                    model_path = 'models/%s' % k
+                    t.load_model_and_restore(model_path)
+
+            # Write the trainers configurations to Tensorboard
+            t.write_tensorboard_text('Hyperparameters', t.parameters)
 
         # Return the OK message
         context.set_code(grpc.StatusCode.OK)
@@ -204,8 +214,6 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
             return handle_type_proto_pb2.HandleTypeProto(handle=-1)
 
         # Stop the trainer wrappers
-        for k, t in trainers.items():
-            t.stop()
 
         context.set_code(grpc.StatusCode.OK)
         return handle_type_proto_pb2.HandleTypeProto(handle=handle)
@@ -243,7 +251,79 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
             brain_name = re.sub('[^0-9a-zA-Z]+', '-', academy_config.BrainParameter[i].brainName)
             trainer = trainers[brain_name]
             brain_action = academy_actions.actions.add()
-            brain_action = trainer.get_action(brain_action, brain_parameter, last_info, curr_info)
+
+            brain_action.brainName = brain_parameter.brainName
+
+            trainer_step = trainer.get_step
+            trainer_max_step = trainer.get_max_steps
+
+            # check if trainer is globally done
+            globally_done = 0
+            if self.train_model and trainer_step >= trainer_max_step:
+                globally_done = 1
+
+            trainer.increment_step()
+            # add dummy action if trainer is globally done
+            if globally_done == 1:
+                if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
+                    for j in range(brain_parameter.actionSize):
+                        brain_action.actions_continous.append(0.0)
+                else:
+                    for j in range(brain_parameter.actionSize):
+                        brain_action.actions_discrete.append(0)
+                trainer.end_episode()
+
+                # Reset is needed
+                brain_action.reset_needed = 1
+
+                # signal global done
+                brain_action.isDone = 1
+            else:
+                # Add experience
+                if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
+                    trainer.add_experiences(last_info, curr_info.last_actions_continuous, curr_info)
+                    trainer.process_experiences(last_info, curr_info.last_actions_continuous, curr_info)
+                else:
+                    trainer.add_experiences(last_info, curr_info.last_action_discrete, curr_info)
+                    trainer.process_experiences(last_info, curr_info.last_action_discrete, curr_info)
+
+                # Process experiences and generate statistics
+                if trainer.is_ready_update() and self.train_model \
+                        and trainer.get_step <= trainer.get_max_steps:
+                    # Perform gradient descent with experience buffer
+                    trainer.update_model()
+                    # Write training statistics.
+                    trainer.write_summary()
+
+                # Save the model by the save frequency
+                if self.train_model and trainer_step != 0 \
+                        and trainer_step % self.save_freq == 0 \
+                        and trainer_step <= trainer_max_step:
+                    model_path = 'models/%s' % brain_name
+                    trainer.save_model(model_path)
+
+                # Compute next action vector
+                brain_actions_vect = trainer.take_action(curr_info)
+
+                # construct brain action object
+                if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
+                    for j in range(brain_parameter.actionSize):
+                        brain_action.actions_continous.append(brain_actions_vect[j])
+                else:
+                    for j in range(brain_parameter.actionSize):
+                        brain_action.actions_discrete.append(brain_actions_vect[j])
+
+                # check if reset is needed
+                if curr_info.local_done:
+                    brain_action.reset_needed = 1
+                else:
+                    brain_action.reset_needed = 0
+
+                # check if trainer is globally done
+                if self.train_model and trainer_step >= trainer_max_step:
+                    brain_action.isDone = 1
+                else:
+                    brain_action.isDone = 0
 
         return academy_actions
 
@@ -304,10 +384,10 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
             raise FAPSPLMEnvironmentException("The trainer config contains an unknown trainer type for brain {}"
                                               .format(brain_name))
         else:
-            self.trainers[brain_name] = TrainerWrapper(brain_name, self, module_spec(academy, brain_name,
+            self.trainers[brain_name] = module_spec(academy, brain_name,
                                                                                      self.trainer_parameters_dict[
                                                                                          brain_name], self.train_model,
-                                                                                     self.seed))
+                                                                                     self.seed)
 
     @staticmethod
     def _get_brain_info(brain_parameter, brain_state):

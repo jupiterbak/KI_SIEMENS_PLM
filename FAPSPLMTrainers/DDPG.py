@@ -348,7 +348,7 @@ class DDPG(object):
         :param next_info: Next AllBrainInfo.
         """
         self.replay_memory.append(
-            (curr_info.states, action_vector, next_info.rewards, next_info.states, next_info.local_done))
+            (curr_info.states, action_vector, [next_info.rewards], next_info.states, [next_info.local_done]))
 
     def process_experiences(self, current_info, action_vector, next_info):
         """
@@ -419,7 +419,8 @@ class DDPG(object):
         target_q_values = self.critic_target_model.predict_on_batch([state1_batch, target_actions])
         discounted_reward_batch = self.gamma * target_q_values
         discounted_reward_batch = discounted_reward_batch * terminal1_batch
-        targets = (reward_batch + discounted_reward_batch).reshape(self.batch_size, 1)
+        added = reward_batch + discounted_reward_batch
+        targets = added.reshape(self.batch_size, 1)
         self.critic_model.train_on_batch([state0_batch, action_batch], targets)
 
         # Update actor

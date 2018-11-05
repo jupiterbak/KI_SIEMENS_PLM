@@ -75,7 +75,7 @@ class TrainerThread(threading.Thread):
                     self.trainer.load_model_and_restore(model_path)
 
         # Write the trainers configurations to Tensorboard
-            self.trainer.write_tensorboard_text('Hyperparameters', self.trainer.parameters)
+        self.trainer.write_tensorboard_text('Hyperparameters', self.trainer.parameters)
 
         self.set_ready()
 
