@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01a89cca-533c-4f01-ae84-e6ee9b084c68" name="Default" comment="Removed Comments">
+    <list default="true" id="01a89cca-533c-4f01-ae84-e6ee9b084c68" name="Default" comment="RPC final without GPU support">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer_config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/trainer_config.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,17 +58,17 @@
           <entry key="bat" value="1126" />
           <entry key="dummy" value="108" />
           <entry key="proto" value="1305" />
-          <entry key="py" value="6466" />
-          <entry key="txt" value="65" />
+          <entry key="py" value="6481" />
+          <entry key="txt" value="104" />
           <entry key="yaml" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="1126" />
-          <entry key="PLAIN_TEXT" value="173" />
+          <entry key="PLAIN_TEXT" value="212" />
           <entry key="PROTO" value="1305" />
-          <entry key="Python" value="6482" />
+          <entry key="Python" value="6497" />
           <entry key="YAML" value="26" />
         </counts>
       </usages-collector>
@@ -95,8 +91,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="510">
+              <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
                 <marker date="1541383092098" expanded="true" signature="353:1239" ph="..." />
@@ -109,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1456">
-              <caret line="249" lean-forward="true" selection-start-line="249" selection-end-line="249" />
+            <state relative-caret-position="17">
+              <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -264,8 +260,8 @@
         <option value="$PROJECT_DIR$/trainer_config.yaml" />
         <option value="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py" />
         <option value="$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py" />
       </list>
     </option>
   </component>
@@ -432,7 +428,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541379796861</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="RPC final without GPU support">
+      <created>1541383400984</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1541383400984</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -475,7 +478,8 @@
     <MESSAGE value="RPC Implementation" />
     <MESSAGE value="RPC Implementation with Multithread" />
     <MESSAGE value="Removed Comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed Comments" />
+    <MESSAGE value="RPC final without GPU support" />
+    <option name="LAST_COMMIT_MESSAGE" value="RPC final without GPU support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -754,18 +758,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-            <marker date="1541383092098" expanded="true" signature="353:1239" ph="..." />
-            <marker date="1541383092098" expanded="true" signature="1277:1278" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DQN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -776,10 +768,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1541383092098" expanded="true" signature="353:1239" ph="..." />
+            <marker date="1541383092098" expanded="true" signature="1277:1278" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1456">
-          <caret line="249" lean-forward="true" selection-start-line="249" selection-end-line="249" />
+        <state relative-caret-position="17">
+          <caret line="72" column="10" selection-start-line="72" selection-start-column="10" selection-end-line="72" selection-end-column="10" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
