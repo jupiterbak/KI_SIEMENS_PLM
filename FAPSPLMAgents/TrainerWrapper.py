@@ -50,34 +50,12 @@ class TrainerThread(threading.Thread):
         self._stop_event = threading.Event()
         self.actionInputQueue = action_input_queue
         self.actionOutputQueue = action_output_queue
-        # self._configure()
 
     def stop(self):
         self._stop_event.set()
 
     def stopped(self):
         return self._stop_event.is_set()
-
-    # def _configure(self):
-    #     # configure tensor flow to use 8 cores
-    #     if self.trainerController.use_gpu:
-    #         if B.backend() == 'tensorflow':
-    #             config = tf.ConfigProto(device_count={"GPU": 1},
-    #                                     intra_op_parallelism_threads=8,
-    #                                     inter_op_parallelism_threads=8,
-    #                                     allow_soft_placement=True)
-    #             keras.backend.tensorflow_backend.set_session(tf.Session(config=config))
-    #         else:
-    #             raise FAPSPLMEnvironmentException("Other backend environment than Tensorflow are not supported. ")
-    #     else:
-    #         if B.backend() == 'tensorflow':
-    #             config = tf.ConfigProto(device_count={"CPU": 8},
-    #                                     intra_op_parallelism_threads=8,
-    #                                     inter_op_parallelism_threads=8,
-    #                                     allow_soft_placement=True)
-    #             keras.backend.tensorflow_backend.set_session(tf.Session(config=config))
-    #         else:
-    #             raise FAPSPLMEnvironmentException("Other backend environment than Tensorflow are not supported. ")
 
     def run(self):
         # Initialize the trainer
