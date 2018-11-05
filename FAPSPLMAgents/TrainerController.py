@@ -242,9 +242,8 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
 
             brain_name = re.sub('[^0-9a-zA-Z]+', '-', academy_config.BrainParameter[i].brainName)
             trainer = trainers[brain_name]
-
-            brain_action = trainer.get_action(brain_parameter, last_info, curr_info)
-            academy_actions.actions.add(brain_action)
+            brain_action = academy_actions.actions.add()
+            brain_action = trainer.get_action(brain_action, brain_parameter, last_info, curr_info)
 
         return academy_actions
 
@@ -355,7 +354,7 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
     @staticmethod
     def serve(use_gpu, run_id, save_freq, load, train, worker_id, keep_checkpoints, lesson, seed,
               trainer_config_path):
-        server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+        server = grpc.server(futures.ThreadPoolExecutor(max_workers=100))
         FAPSPLMServivesgrpc.add_FAPSPLMServicesServicer_to_server(
             TrainerController(use_gpu, run_id, save_freq, load, train, worker_id,
                               keep_checkpoints, lesson, seed, trainer_config_path), server)

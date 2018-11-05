@@ -18,8 +18,9 @@ class TrainerWrapper:
                                     self.actionOutputQueue)
 
     def start(self):
-        self.thread.start()
-        self.thread.get_event_ready().wait()
+        if not self.thread.is_alive():
+            self.thread.start()
+            self.thread.get_event_ready().wait()
 
     def stop(self):
         if self.thread.is_alive():
@@ -27,8 +28,8 @@ class TrainerWrapper:
             self.thread.join()
             self.thread = None
 
-    def get_action(self, brain_parameter, last_info, curr_info):
-        self.actionInputQueue.put([brain_parameter, last_info, curr_info])
+    def get_action(self, brain_action, brain_parameter, last_info, curr_info):
+        self.actionInputQueue.put([brain_action, brain_parameter, last_info, curr_info])
         data = self.actionOutputQueue.get()
         self.actionOutputQueue.task_done()
         return data
@@ -80,12 +81,12 @@ class TrainerThread(threading.Thread):
 
         # Main Trainer Loop
         while not self.stopped():
-            [brain_parameter, last_info, curr_info] = self.actionInputQueue.get()
+            [brain_action, brain_parameter, last_info, curr_info] = self.actionInputQueue.get()
 
             if (brain_parameter is None) or (last_info is None) or (curr_info is None):
                 time.sleep(1)
             else:
-                brain_action = brain_action_proto_pb2.BrainActionProto()
+
                 brain_action.brainName = brain_parameter.brainName
 
                 trainer_step = self.trainer.get_step
