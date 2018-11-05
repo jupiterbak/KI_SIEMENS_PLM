@@ -5,8 +5,8 @@ import logging
 import numpy as np
 from collections import deque
 
-from keras.models import Sequential
-from keras.layers import Dense
+from keras.models import Model
+from keras.layers import Input, Dense
 from keras.optimizers import Adam
 from keras import backend as k
 
@@ -101,12 +101,13 @@ class DQN:
 
     def _build_model(self):
         # Neural Net for Deep-Q learning Model
-        model = Sequential()
-        model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu', name="DQN_input"))
+        inputs = Input(shape=(self.state_size,))
+        layer = Dense(self.hidden_units, input_dim=self.state_size, activation='relu', name="DQN_input")(inputs)
+
         for x in range(1, self.num_layers):
-            model.add(Dense(self.hidden_units, activation='relu'))
-        model.add(Dense(self.action_size, activation='linear'))
-        return model
+            layer = Dense(self.hidden_units, activation='relu')(layer)
+            layer = Dense(self.action_size, activation='linear')(layer)
+        return Model(inputs=inputs, outputs=layer)
 
     def is_initialized(self):
         """
@@ -213,7 +214,7 @@ class DQN:
         :return: A boolean corresponding to wether or not update_model() can be run
         """
         # The NN is ready to be updated if there is at least a batch in the replay memory
-        #return (len(self.replay_memory) >= self.batch_size) and (len(self.replay_memory) % self.batch_size == 0)
+        # return (len(self.replay_memory) >= self.batch_size) and (len(self.replay_memory) % self.batch_size == 0)
 
         # The NN is ready to be updated everytime a batch is sampled
         return (self.steps > 1) and ((self.steps % self.batch_size) == 0)

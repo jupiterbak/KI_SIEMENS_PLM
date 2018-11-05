@@ -70,7 +70,7 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
             tf.set_random_seed(self.seed)
         else:
             np.random.seed(seed)
-        self._configure()
+        # self._configure()
         self.trainer_config = self._load_config()
 
     def FAPSAGENT_Initialize(self, request, context):

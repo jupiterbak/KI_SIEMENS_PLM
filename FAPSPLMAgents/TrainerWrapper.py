@@ -3,13 +3,8 @@ import queue
 import threading
 import time
 
-import keras
-import keras.backend as B
-import tensorflow as tf
-
-from FAPSPLMAgents.communicatorapi_python import academy_action_proto_pb2 as academy_action_proto_pb2
+from FAPSPLMAgents.communicatorapi_python import brain_action_proto_pb2 as brain_action_proto_pb2
 from FAPSPLMAgents.communicatorapi_python import action_type_proto_pb2 as action_type_proto_pb2
-from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -17,13 +12,14 @@ logger = logging.getLogger(__name__)
 
 class TrainerWrapper:
     def __init__(self, trainer_name, trainer_controller, trainer):
-        self.actionInputQueue = queue.Queue
-        self.actionOutputQueue = queue.Queue
+        self.actionInputQueue = queue.Queue()
+        self.actionOutputQueue = queue.Queue()
         self.thread = TrainerThread(trainer_name, trainer_controller, trainer, self.actionInputQueue,
                                     self.actionOutputQueue)
 
     def start(self):
         self.thread.start()
+        self.thread.get_event_ready().wait()
 
     def stop(self):
         if self.thread.is_alive():
@@ -32,7 +28,7 @@ class TrainerWrapper:
             self.thread = None
 
     def get_action(self, brain_parameter, last_info, curr_info):
-        self.actionInputQueue.put(brain_parameter, last_info, curr_info)
+        self.actionInputQueue.put([brain_parameter, last_info, curr_info])
         data = self.actionOutputQueue.get()
         self.actionOutputQueue.task_done()
         return data
@@ -48,8 +44,18 @@ class TrainerThread(threading.Thread):
         self.trainerController = trainer_controller
         self.trainer = trainer
         self._stop_event = threading.Event()
+        self._ready_event = threading.Event()
         self.actionInputQueue = action_input_queue
         self.actionOutputQueue = action_output_queue
+
+    def get_event_ready(self):
+        return self._ready_event
+
+    def set_ready(self):
+        self._ready_event.set()
+
+    def is_ready(self):
+        return self._ready_event.is_set()
 
     def stop(self):
         self._stop_event.set()
@@ -70,14 +76,16 @@ class TrainerThread(threading.Thread):
         # Write the trainers configurations to Tensorboard
             self.trainer.write_tensorboard_text('Hyperparameters', self.trainer.parameters)
 
+        self.set_ready()
+
         # Main Trainer Loop
         while not self.stopped():
-            brain_parameter, last_info, curr_info = self.actionInputQueue.get()
+            [brain_parameter, last_info, curr_info] = self.actionInputQueue.get()
 
             if (brain_parameter is None) or (last_info is None) or (curr_info is None):
                 time.sleep(1)
             else:
-                brain_action = academy_action_proto_pb2.AcademyActionProto()
+                brain_action = brain_action_proto_pb2.BrainActionProto()
                 brain_action.brainName = brain_parameter.brainName
 
                 trainer_step = self.trainer.get_step
