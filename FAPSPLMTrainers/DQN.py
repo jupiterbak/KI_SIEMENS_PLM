@@ -8,7 +8,7 @@ from collections import deque
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.optimizers import Adam
-from keras import backend as k
+from keras import backend as k, Input, Model
 
 from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 import FAPSPLMAgents.communicatorapi_python.action_type_proto_pb2 as action__type__proto__pb2
@@ -101,11 +101,19 @@ class DQN:
 
     def _build_model(self):
         # Neural Net for Deep-Q learning Model
-        model = Sequential()
-        model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu'))
+        # model = Sequential()
+        # model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu'))
+        # for x in range(1, self.num_layers):
+        #     model.add(Dense(self.hidden_units, activation='relu'))
+        # model.add(Dense(self.action_size, activation='linear'))
+        # return model
+
+        a = Input(shape=[self.state_size], name='actor_state')
+        h = Dense(self.hidden_units, activation='relu', kernel_initializer='he_uniform', name="ATTTS")(a)
         for x in range(1, self.num_layers):
-            model.add(Dense(self.hidden_units, activation='relu'))
-        model.add(Dense(self.action_size, activation='linear'))
+            h = Dense(self.hidden_units, activation='relu', kernel_initializer='he_uniform')(h)
+        o = Dense(self.action_size, activation='linear', kernel_initializer='he_uniform')(h)
+        model = Model(inputs=a, outputs=o)
         return model
 
     def is_initialized(self):

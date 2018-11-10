@@ -262,7 +262,6 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
             if self.train_model and trainer_step >= trainer_max_step:
                 globally_done = 1
 
-            trainer.increment_step()
             # add dummy action if trainer is globally done
             if globally_done == 1:
                 if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
@@ -280,6 +279,7 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
                 brain_action.isDone = 1
             else:
                 # Add experience
+
                 if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
                     trainer.add_experiences(last_info, curr_info.last_actions_continuous, curr_info)
                     trainer.process_experiences(last_info, curr_info.last_actions_continuous, curr_info)
@@ -291,7 +291,10 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
                 if trainer.is_ready_update() and self.train_model \
                         and trainer.get_step <= trainer.get_max_steps:
                     # Perform gradient descent with experience buffer
-                    trainer.update_model()
+                    try:
+                        trainer.update_model()
+                    except ValueError:
+                        print("Error")
                     # Write training statistics.
                     trainer.write_summary()
 
@@ -325,6 +328,7 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
                 else:
                     brain_action.isDone = 0
 
+                trainer.increment_step()
         return academy_actions
 
     def _configure(self):

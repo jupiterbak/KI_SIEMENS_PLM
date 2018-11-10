@@ -125,15 +125,12 @@ class DDPG(object):
         return self.last_reward
 
     def _create_actor_model(self):
-        model = Sequential()
-        model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu',
-                        kernel_initializer='he_uniform', name='main_input'))
+        a = Input(shape=[self.state_size], name='actor_state')
+        h = Dense(self.hidden_units, activation='relu', kernel_initializer='he_uniform')(a)
         for x in range(1, self.num_layers):
-            model.add(Dense(self.hidden_units, activation='relu', kernel_initializer='he_uniform'))
-
-        model.add(Dense(self.action_size, activation='tanh', kernel_initializer=RandomUniform(minval=-0.001,
-                                                                                              maxval=0.001),
-                        name='main_output'))
+            h = Dense(self.hidden_units, activation='relu', kernel_initializer='he_uniform')(h)
+        o = Dense(self.action_size, activation='linear', kernel_initializer=RandomUniform(minval=-0.001, maxval=0.001))(h)
+        model = Model(inputs=a, outputs=o)
         return model
 
     def _create_critic_model(self):
