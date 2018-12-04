@@ -5,6 +5,7 @@ import numpy as np
 from collections import deque
 
 from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
+from FAPSPLMAgents.communicatorapi_python import action_type_proto_pb2 as action_type_proto_pb2
 
 logger = logging.getLogger("FAPSPLMAgents")
 
@@ -134,7 +135,10 @@ class Random(object):
         :param brain_info: The BrainInfo from environment.
         :return: the action array and an object to be passed to add experiences
         """
-        return np.random.randint(0, 1, self.action_size)
+        if self.action_space_type == action_type_proto_pb2.action_discrete:
+            return np.random.randint(0, 1, self.action_size)
+        else:
+            return (np.random.sample(self.action_size) * 2) - 1
 
     def add_experiences(self, curr_info, action_vector, next_info):
         """
