@@ -17,7 +17,7 @@ logger = logging.getLogger("FAPSPLMAgents")
 
 class FAPSTrainerException(FAPSPLMEnvironmentException):
     """
-    Related to errors with the Trainer.
+    Related to errors with the Trainer. - Not implemented
     """
     pass
 

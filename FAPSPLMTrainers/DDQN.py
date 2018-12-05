@@ -238,22 +238,57 @@ class DDQN:
         Uses the memory to update model. Run back propagation.
         """
         # TODO: update to support multiple agents. Now only one agent is supported
-        mini_batch = random.sample(self.replay_memory, self.batch_size)
+        num_samples = min(self.batch_size, len(self.replay_memory))
+        mini_batch = random.sample(self.replay_memory, num_samples)
 
+        # Start by extracting the necessary parameters (we use a vectorized implementation).
+        state0_batch = []
+        reward_batch = []
+        action_batch = []
+        terminal1_batch = []
+        state1_batch = []
         for state, action, reward, next_state, done in mini_batch:
-            target_f = self.model.predict(state)
-            if done:
-                target_f[0][np.argmax(action)] = reward[0]
-            else:
-                target_f[0][np.argmax(action)] = (reward + self.gamma *
-                          np.amax(self.target_model.predict(next_state)[0]))[0]
-            # target_f[0][action] = target
-            self.model.fit(state, target_f, epochs=1, verbose=0)
+            state0_batch.append(state[0])
+            state1_batch.append(next_state[0])
+            reward_batch.append(reward[0])
+            action_batch.append(action)
+            terminal1_batch.append(0. if done[0] else 1.)
+
+        state0_batch = np.array(state0_batch)
+        state1_batch = np.array(state1_batch)
+        terminal1_batch = np.array(terminal1_batch)
+        reward_batch = np.array(reward_batch)
+        action_batch = np.array(action_batch)
+
+        next_target = self.target_model.predict_on_batch(state1_batch)
+        discounted_reward_batch = self.gamma * np.amax(next_target, axis=1)
+        discounted_reward_batch = discounted_reward_batch * terminal1_batch
+        delta_targets = (reward_batch + discounted_reward_batch).reshape(self.batch_size, 1)
+
+        target_f = self.model.predict_on_batch(state0_batch)
+        indexes = np.argmax(action_batch, axis=1)
+        target_f_after = target_f
+        target_f_after[:, indexes] = delta_targets
+
+        # train the model network
+        self.model.train_on_batch(state0_batch, target_f_after)
+
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
 
         # Update the target network
-        self._update_target_model()
+        if self.get_step % (32 * self.batch_size):
+            self._update_target_model()
+
+        # for state, action, reward, next_state, done in mini_batch:
+        #     target_f = self.model.predict(state)
+        #     if done:
+        #         target_f[0][np.argmax(action)] = reward[0]
+        #     else:
+        #         target_f[0][np.argmax(action)] = (reward + self.gamma *
+        #                   np.amax(self.target_model.predict(next_state)[0]))[0]
+        #     # target_f[0][action] = target
+        #     self.model.fit(state, target_f, epochs=1, verbose=0)
 
     def save_model(self, model_path):
         """

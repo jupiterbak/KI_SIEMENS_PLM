@@ -230,7 +230,8 @@ class A2C(object):
         """
         Uses training_buffer to update model. Run back propagation.
         """
-        mini_batch = random.sample(self.replay_memory, self.batch_size)
+        num_samples = min(self.batch_size, len(self.replay_memory))
+        mini_batch = random.sample(self.replay_memory, num_samples)
 
         states = np.zeros((self.batch_size, self.state_size))
         advantagess = np.zeros((self.batch_size, self.action_size))

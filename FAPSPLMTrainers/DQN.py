@@ -230,7 +230,8 @@ class DQN:
         Uses the memory to update model. Run back propagation.
         """
         # TODO: update to support multiple agents. Now only one agent is supported
-        mini_batch = random.sample(self.replay_memory, self.batch_size)
+        num_samples = min(self.batch_size, len(self.replay_memory))
+        mini_batch = random.sample(self.replay_memory, num_samples)
 
         # Start by extracting the necessary parameters (we use a vectorized implementation).
         state0_batch = []
@@ -260,7 +261,7 @@ class DQN:
         indexes = np.argmax(action_batch, axis=1)
         target_f_after = target_f
         target_f_after[:, indexes] = delta_targets
-        self.model.train_on_batch(state0_batch, target_f)
+        self.model.train_on_batch(state0_batch, target_f_after)  # Test impl. other solution 'target_f'
 
         # TODO: check the performance with the following trick - Jupiter
         if self.epsilon > self.epsilon_min:

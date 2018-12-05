@@ -4,14 +4,14 @@ import logging
 import numpy as np
 from collections import deque
 
-from FAPSPLMAgents.exception import FAPSPLMEnvironmentException, BrainInfo
+from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 
 logger = logging.getLogger("FAPSPLMAgents")
 
 
 class FAPSTrainerException(FAPSPLMEnvironmentException):
     """
-    Related to errors with the Trainer.
+    Related to errors with the Trainer. - Not implemented
     """
     pass
 
