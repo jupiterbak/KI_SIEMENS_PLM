@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01a89cca-533c-4f01-ae84-e6ee9b084c68" name="Default" comment="Add standard RPC corrected no GPU support">
+    <list default="true" id="01a89cca-533c-4f01-ae84-e6ee9b084c68" name="Default" comment="Optimize memory sampling and DDQN.">
+      <change afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DRQN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/A2C.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/A2C.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/AC.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/AC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/PPO.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/PPO.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer_config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/trainer_config.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FAPSPLMTrainers/Random.py" beforeDir="false" afterPath="$PROJECT_DIR$/FAPSPLMTrainers/Random.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,84 +14,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-700110642">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="17" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.136" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.34" value="2" />
-          <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.37" value="1" />
-          <entry key="project.open.time.39" value="1" />
-          <entry key="project.open.time.4" value="7" />
-          <entry key="project.open.time.41" value="1" />
-          <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.63" value="1" />
-          <entry key="project.open.time.88" value="1" />
-          <entry key="project.open.time.92" value="1" />
-          <entry key="project.opened" value="24" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="bat" value="10" />
-          <entry key="cc" value="3" />
-          <entry key="cs" value="6" />
-          <entry key="h" value="6" />
-          <entry key="md" value="1" />
-          <entry key="proto" value="158" />
-          <entry key="py" value="292" />
-          <entry key="txt" value="7" />
-          <entry key="yaml" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Bat" value="9" />
-          <entry key="C#" value="2" />
-          <entry key="C++" value="9" />
-          <entry key="CSFile" value="4" />
-          <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="PROTO" value="157" />
-          <entry key="Python" value="292" />
-          <entry key="YAML" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="Python Console" value="16" />
-          <entry key="bat" value="1126" />
-          <entry key="dummy" value="108" />
-          <entry key="proto" value="1305" />
-          <entry key="py" value="7002" />
-          <entry key="txt" value="140" />
-          <entry key="yaml" value="88" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Bat" value="1126" />
-          <entry key="PLAIN_TEXT" value="248" />
-          <entry key="PROTO" value="1305" />
-          <entry key="Python" value="7018" />
-          <entry key="YAML" value="88" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="240" column="8" selection-start-line="240" selection-start-column="8" selection-end-line="241" selection-end-column="67" />
+            <state relative-caret-position="714">
+              <caret line="54" column="79" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -102,11 +28,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DQN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="233" column="67" selection-start-line="233" selection-start-column="67" selection-end-line="233" selection-end-column="67" />
+            <state relative-caret-position="714">
+              <caret line="54" column="79" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
               <folding>
                 <element signature="e#19#28#0" expanded="true" />
-                <marker date="1544016234164" expanded="true" signature="3400:3409" ph="..." />
+                <marker date="1544017784282" expanded="true" signature="3397:3406" ph="..." />
               </folding>
             </state>
           </provider>
@@ -115,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="393" column="67" selection-start-line="393" selection-start-column="67" selection-end-line="393" selection-end-column="67" />
+            <state relative-caret-position="527">
+              <caret line="45" column="61" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="61" />
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
               </folding>
@@ -127,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/Random.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138">
-              <caret line="140" column="63" selection-start-line="140" selection-start-column="63" selection-end-line="140" selection-end-column="63" />
+            <state relative-caret-position="255">
+              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
               <folding>
                 <element signature="e#20#34#0" expanded="true" />
               </folding>
@@ -136,31 +62,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/A2C.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="236" column="19" selection-start-line="236" selection-start-column="8" selection-end-line="236" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/AC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/PPO.py">
+        <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DRQN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+            <state relative-caret-position="962">
+              <caret line="222" column="11" selection-start-line="222" selection-start-column="11" selection-end-line="222" selection-end-column="11" />
               <folding>
-                <element signature="e#20#34#0" expanded="true" />
+                <element signature="e#19#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -216,7 +124,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_configuration_proto.proto" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/academy_state_proto.proto" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/brain_parameter_proto.proto" />
         <option value="$PROJECT_DIR$/FAPSPLMAgentRPC/protobuf-definitions/FAPSPLMServives.proto" />
@@ -259,18 +166,19 @@
         <option value="$PROJECT_DIR$/FAPSPLMAgents/TrainerWrapper.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/FAPSPLMAgents/TrainerController.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMTrainers/Random.py" />
         <option value="$PROJECT_DIR$/trainer_config.yaml" />
-        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" />
-        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" />
         <option value="$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py" />
         <option value="$PROJECT_DIR$/FAPSPLMTrainers/A2C.py" />
         <option value="$PROJECT_DIR$/FAPSPLMTrainers/AC.py" />
         <option value="$PROJECT_DIR$/FAPSPLMTrainers/PPO.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/Random.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DQN.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py" />
+        <option value="$PROJECT_DIR$/FAPSPLMTrainers/DRQN.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1920" />
@@ -298,43 +206,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="KI_SIEMENS_PLM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KI_SIEMENS_PLM" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="KI_SIEMENS_PLM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KI_SIEMENS_PLM" type="462c0819:PsiDirectoryNode" />
-              <item name="FAPSPLMTrainers" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Workspace_DEAP" />
+    <property name="last_opened_file_path" value="D:/PYTHON_Workspace/Poacketsphinx_Tutorial" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMTrainers" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\MCD_DLL" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python" />
+      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\protobuf-definitions\communicator_objects" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgents" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\protobuf-definitions" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python\communicator_objects" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python" />
       <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\MCD_DLL" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\FAPSPLMAgentRPC\communicatorapi_python" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\protobuf-definitions\communicator_objects" />
-      <recent name="C:\Users\Administrator\Desktop\SP142\01_KI_ProcessSimulate\KI_SIEMENS_PLM\protobuf-definitions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -458,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543942215254</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Optimize memory sampling and DDQN.">
+      <created>1544016419117</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1544016419117</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -472,7 +372,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24868283" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -494,9 +393,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update Environement" />
     <MESSAGE value="RPC Implementation" />
@@ -506,7 +402,8 @@
     <MESSAGE value="RPC corrected without GPU support" />
     <MESSAGE value="RPC corrected no GPU support" />
     <MESSAGE value="Add standard RPC corrected no GPU support" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add standard RPC corrected no GPU support" />
+    <MESSAGE value="Optimize memory sampling and DDQN." />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimize memory sampling and DDQN." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -520,13 +417,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/protobuf-definitions/FAPSPLMServives.proto">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="74" selection-start-line="16" selection-start-column="56" selection-end-line="16" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FAPSPLMAgents/communicatorapi_csharp/AcademyConfigurationProto.cs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -754,38 +644,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/PPO.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="240" column="8" selection-start-line="240" selection-start-column="8" selection-end-line="241" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DQN.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="233" column="67" selection-start-line="233" selection-start-column="67" selection-end-line="233" selection-end-column="67" />
-          <folding>
-            <element signature="e#19#28#0" expanded="true" />
-            <marker date="1544016234164" expanded="true" signature="3400:3409" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="393" column="67" selection-start-line="393" selection-start-column="67" selection-end-line="393" selection-end-column="67" />
+        <state relative-caret-position="102">
+          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
           <folding>
             <element signature="e#20#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/Random.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/AC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="140" column="63" selection-start-line="140" selection-start-column="63" selection-end-line="140" selection-end-column="63" />
+        <state relative-caret-position="323">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
           <folding>
             <element signature="e#20#34#0" expanded="true" />
           </folding>
@@ -794,24 +666,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/A2C.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
+        <state relative-caret-position="3824">
           <caret line="236" column="19" selection-start-line="236" selection-start-column="8" selection-end-line="236" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/AC.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDQN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="714">
+          <caret line="54" column="79" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/PPO.py">
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DQN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="63" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+        <state relative-caret-position="714">
+          <caret line="54" column="79" selection-start-line="54" selection-start-column="79" selection-end-line="54" selection-end-column="79" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
+            <marker date="1544017784282" expanded="true" signature="3397:3406" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DDPG.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="45" column="61" selection-start-line="45" selection-start-column="44" selection-end-line="45" selection-end-column="61" />
           <folding>
             <element signature="e#20#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/Random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
+          <folding>
+            <element signature="e#20#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FAPSPLMTrainers/DRQN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="962">
+          <caret line="222" column="11" selection-start-line="222" selection-start-column="11" selection-end-line="222" selection-end-column="11" />
+          <folding>
+            <element signature="e#19#28#0" expanded="true" />
           </folding>
         </state>
       </provider>

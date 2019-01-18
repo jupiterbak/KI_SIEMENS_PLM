@@ -24,7 +24,7 @@ class FAPSTrainerException(FAPSPLMEnvironmentException):
 
 
 class DQN:
-    """This class is the abstract class for the unitytrainers"""
+    """This class is the abstract class for the trainers"""
 
     def __init__(self, env, brain_name, trainer_parameters, training, seed):
         """
@@ -52,7 +52,7 @@ class DQN:
         self.state_size = env.stateSize
         self.action_size = env.actionSize
         self.action_space_type = env.actionSpaceType
-        if self.action_space_type == action__type__proto__pb2.action_discrete:
+        if self.action_space_type == action__type__proto__pb2.action_continuous:
             logger.warning("Using DQN with continuous action space. Please check your environment definition")
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']

@@ -6,7 +6,7 @@ import numpy as np
 from collections import deque
 
 from keras.models import Sequential
-from keras.layers import Dense
+from keras.layers import Dense, LSTM
 from keras.optimizers import Adam
 from keras import backend as k
 
@@ -23,8 +23,8 @@ class FAPSTrainerException(FAPSPLMEnvironmentException):
     pass
 
 
-class DDQN:
-    """This class is the abstract class for the unitytrainers"""
+class DRQN:
+    """This class is the abstract class for the the faps trainers"""
 
     def __init__(self, env, brain_name, trainer_parameters, training, seed):
         """
@@ -53,7 +53,7 @@ class DDQN:
         self.action_size = env.actionSize
         self.action_space_type = env.actionSpaceType
         if self.action_space_type == action__type__proto__pb2.action_continuous:
-            logger.warning("Using DDQN with continuous action space. Please check your environment definition")
+            logger.warning("Using DRQN with continuous action space. Please check your environment definition")
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']
         self.hidden_units = self.trainer_parameters['hidden_units']
@@ -67,7 +67,7 @@ class DDQN:
         self.target_model = None
 
     def __str__(self):
-        return '''DDQN Trainer'''
+        return '''DRQN (DDQN with LSTM) Trainer'''
 
     @property
     def parameters(self):
@@ -106,6 +106,8 @@ class DDQN:
         model.add(Dense(self.hidden_units, input_dim=self.state_size, activation='relu'))
         for x in range(1, self.num_layers):
             model.add(Dense(self.hidden_units, activation='relu'))
+
+        model.add(LSTM(512, activation='tanh'))
         model.add(Dense(self.action_size, activation='linear'))
         return model
 

@@ -18,7 +18,7 @@ class FAPSTrainerException(FAPSPLMEnvironmentException):
 
 
 class Random(object):
-    """This class is the abstract class for the unitytrainers"""
+    """This class is the abstract class for the faps trainers"""
 
     def __init__(self, env, brain_name, trainer_parameters, training, seed):
         """
