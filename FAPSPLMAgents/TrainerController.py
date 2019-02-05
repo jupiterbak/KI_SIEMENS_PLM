@@ -278,8 +278,31 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
                 # signal global done
                 brain_action.isDone = 1
             else:
-                # Add experience
+                # Compute next action vector
+                brain_actions_vect = trainer.take_action(curr_info)
 
+                # construct brain action object
+                if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
+                    for j in range(brain_parameter.actionSize):
+                        brain_action.actions_continous.append(brain_actions_vect[j])
+                else:
+                    for j in range(brain_parameter.actionSize):
+                        brain_action.actions_discrete.append(brain_actions_vect[j])
+
+                # check if reset is needed
+                if curr_info.local_done:
+                    brain_action.reset_needed = 1
+                else:
+                    brain_action.reset_needed = 0
+
+                # check if trainer is globally done
+                if self.train_model and trainer_step >= trainer_max_step:
+                    brain_action.isDone = 1
+                else:
+                    brain_action.isDone = 0
+                trainer.increment_step()
+
+                # Add experience
                 if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
                     trainer.add_experiences(last_info, curr_info.last_actions_continuous, curr_info)
                     trainer.process_experiences(last_info, curr_info.last_actions_continuous, curr_info)
@@ -305,30 +328,6 @@ class TrainerController(FAPSPLMServivesgrpc.FAPSPLMServicesServicer):
                     model_path = 'models/%s' % brain_name
                     trainer.save_model(model_path)
 
-                # Compute next action vector
-                brain_actions_vect = trainer.take_action(curr_info)
-
-                # construct brain action object
-                if brain_parameter.actionSpaceType == action_type_proto_pb2.action_continuous:
-                    for j in range(brain_parameter.actionSize):
-                        brain_action.actions_continous.append(brain_actions_vect[j])
-                else:
-                    for j in range(brain_parameter.actionSize):
-                        brain_action.actions_discrete.append(brain_actions_vect[j])
-
-                # check if reset is needed
-                if curr_info.local_done:
-                    brain_action.reset_needed = 1
-                else:
-                    brain_action.reset_needed = 0
-
-                # check if trainer is globally done
-                if self.train_model and trainer_step >= trainer_max_step:
-                    brain_action.isDone = 1
-                else:
-                    brain_action.isDone = 0
-
-                trainer.increment_step()
         return academy_actions
 
     def _configure(self):

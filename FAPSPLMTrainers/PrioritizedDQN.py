@@ -12,6 +12,7 @@ from keras import backend as k
 
 from FAPSPLMAgents.exception import FAPSPLMEnvironmentException
 import FAPSPLMAgents.communicatorapi_python.action_type_proto_pb2 as action__type__proto__pb2
+from FAPSPLMTrainers.utils.PERMemory import PERMemory
 
 logger = logging.getLogger("FAPSPLMAgents")
 
@@ -23,7 +24,7 @@ class FAPSTrainerException(FAPSPLMEnvironmentException):
     pass
 
 
-class DDQN:
+class PrioritizedDQN:
     """This class is the abstract class for the unitytrainers"""
 
     def __init__(self, env, brain_name, trainer_parameters, training, seed):
@@ -57,7 +58,7 @@ class DDQN:
         self.num_layers = self.trainer_parameters['num_layers']
         self.batch_size = self.trainer_parameters['batch_size']
         self.hidden_units = self.trainer_parameters['hidden_units']
-        self.replay_memory = deque(maxlen=self.trainer_parameters['memory_size'])
+        self.replay_memory = PERMemory(capacity=self.trainer_parameters['memory_size'])
         self.gamma = self.trainer_parameters['gamma']  # discount rate
         self.epsilon = self.trainer_parameters['epsilon']  # exploration rate
         self.epsilon_min = self.trainer_parameters['epsilon_min']
@@ -67,7 +68,7 @@ class DDQN:
         self.target_model = None
 
     def __str__(self):
-        return '''Double DQN Trainer'''
+        return '''DQN with Prioritized experience replay Trainer'''
 
     @property
     def parameters(self):
@@ -141,7 +142,7 @@ class DDQN:
         Clear the trainer
         """
         k.clear_session()
-        self.replay_memory.clear()
+        self.replay_memory = PERMemory(capacity=self.trainer_parameters['memory_size'])
         self.model = None
         self.target_model = None
 
@@ -204,8 +205,22 @@ class DDQN:
         :param curr_info: Current AllBrainInfo.
         :param next_info: Next AllBrainInfo.
         """
-        self.replay_memory.append(
-            (curr_info.states, action_vector, next_info.rewards, next_info.states, next_info.local_done))
+        # calculate the error
+        index = np.argmax(action_vector)
+
+        target = self.model.self.model.predict(curr_info.states)
+        old_val = target[0][index]
+
+        target_val = self.target_model.self.model.predict(curr_info.states)
+
+        if next_info.local_done:
+            target[0][index] = next_info.rewards
+        else:
+            target[0][index] = next_info.rewards + self.gamma * np.amax(target_val[0])
+
+        error = abs(old_val - target[0][index])
+        self.replay_memory.add(error, (curr_info.states,
+                                       action_vector, next_info.rewards, next_info.states, next_info.local_done))
 
     def process_experiences(self, current_info, action_vector, next_info):
         """
@@ -222,7 +237,7 @@ class DDQN:
         A signal that the Episode has ended. The buffer must be reset.
         Get only called when the academy resets.
         """
-        self.replay_memory.clear()
+        self.replay_memory = PERMemory(capacity=self.trainer_parameters['memory_size'])
         print("End Episode...")
 
     def is_ready_update(self):
@@ -238,8 +253,8 @@ class DDQN:
         Uses the memory to update model. Run back propagation.
         """
         # TODO: update to support multiple agents. Now only one agent is supported
-        num_samples = min(self.batch_size, len(self.replay_memory))
-        mini_batch = random.sample(self.replay_memory, num_samples)
+        num_samples = min(self.batch_size, self.replay_memory.capacity)
+        mini_batch = self.replay_memory.sample(num_samples)
 
         # Start by extracting the necessary parameters (we use a vectorized implementation).
         state0_batch = []
